@@ -1,0 +1,27 @@
+public class program
+{
+ public static void Main(string[] args)
+{
+
+List<string>myList= new List<string>();
+
+myList.Add("Yellow");
+myList.Add("Green");
+myList.Add("Red");
+
+foreach(string colour in myList)
+console.write(colour.ToString()+" ");
+
+myList.Sort();
+foreach(string colour in myList)
+console.write(colour.ToString()+" ");
+
+myList.Remove("Red");
+foreach(string colour in myList)
+console.write(colour.ToString()+" ");
+
+
+
+}
+
+}

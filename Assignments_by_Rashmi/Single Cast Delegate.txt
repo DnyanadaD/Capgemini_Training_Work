@@ -1,0 +1,21 @@
+
+//Single Cast Delegate
+
+public delegate void myDel( int a ,int b);
+Class One
+{
+   public void sum(int a, int bb
+   {
+      Console.WriteLine("Addition : "(x+y));
+   }
+}
+class Program
+{
+   static void Main(string[] args)
+   {
+      One obj =new One();
+      myDel m= new myDel(obj.sum);
+      m(40,40);
+   }
+}
+
