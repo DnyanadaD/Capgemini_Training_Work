@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Strings2 //DO NOT change the namespace name
+{
+    public class Program //DO NOT change the class name
+    {
+        public static void Main(string[] args)  //DO NOT change the method signature
+        {
+            Console.WriteLine("Enter the string:");
+            string input = Console.ReadLine();
+            bool valid = true;
+            string en = input;
+            for(int i=0; i<input.Length; i++)
+            {
+                if(!Char.IsLetter(input[i]))
+                {
+                    valid = false;
+                    break;
+                }
+            }
+            if(valid)
+            {
+                for(int j=0; j<input.Length; j++)
+                {
+                    if(j==0||j%2==0)
+                    {
+                        int ascii = input[j];
+                        ascii++;
+                        char replace = (char)ascii;
+                        StringBuilder sb = new StringBuilder(en);
+                        sb[j] = replace;
+                        en = sb.ToString();
+                        
+                    }
+                }
+                Console.WriteLine(input+en);
+            }
+            else
+            {
+                Console.WriteLine("Invalid input");
+            }
+            
+        }
+    }
+}

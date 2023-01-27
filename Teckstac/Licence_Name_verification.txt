@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+
+
+namespace Array_1 //DO NOT change the namespace name
+{
+    public class Program //DO NOT change the class name
+    {
+        public static void Main(string[] args)  //DO NOT change the method signature
+        {
+            int Sum=0;
+            int Count=0;
+            Console.WriteLine("Enter the number of applications:");
+            int i = Convert.ToInt32(Console.ReadLine());
+            string[] arr = new string[i];
+           // Accepting value from user
+            Console.WriteLine("Enter the applicant names:");
+            for (i = 0; i < arr.Length; i++)
+            {
+                //Storing value in an array
+                arr[i] = Console.ReadLine();
+             }
+             //Console.WriteLine("\n\n");
+             for(i=0;i<arr.Length;i++)
+             {
+              if(!String.IsNullOrWhiteSpace(arr[i]))
+              {
+                  arr[i]=Regex.Replace( arr[i], @" ", "" );}}
+
+                   for( i=0;i<arr.Length;i++)
+                 {
+                  bool test=true;
+                  for(int j=0;j<arr[i].Length;j++)
+                  {
+                   test= Char.IsLetter(arr[i], j);
+                   if(test==false)
+                   break;
+                }
+                if(test)
+                {
+                  // Console.WriteLine(arr[i]+" => Verified");
+                  Sum++;
+                }
+                else
+                {
+                   // Console.WriteLine(arr[i]+" => Invalid details");
+                    Count++;
+                }
+            }
+              Console.WriteLine("Verified = " + Sum);
+              Console.WriteLine("Not verified = " + Count);
+              Console.ReadLine();
+        }
+    }
+}

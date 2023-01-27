@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ProofValidations //DO NOT change the namespace name
+{
+    public class Program //DO NOT change the class name
+    {
+        public static void Main(string[] args)  //DO NOT change the method signature
+        {
+            string DL, ID, Passport;
+            string check = "Available";
+            Console.WriteLine("Driving License:");
+            DL= Console.ReadLine();
+            Console.WriteLine("ID Proof:");
+            ID= Console.ReadLine();
+            Console.WriteLine("Passport:");
+            Passport= Console.ReadLine();
+            
+            if(DL==check && (ID==check||Passport==check))
+            {
+                Console.WriteLine("No ticket issued");
+            }
+            
+            else
+            {
+                Console.WriteLine("Ticket issued");
+            }
+        }
+    }
+}

@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ProgFundamentals8               //DO NOT CHANGE the name of namespace
+{
+    public class Program                  //DO NOT CHANGE the name of class 'Program'
+    { 
+        public static void Main(string[] args)      //DO NOT CHANGE 'Main' Signature
+        {
+           Console.WriteLine("Enter starting number : ");
+           int num = Convert.ToInt32(Console.ReadLine());
+           int firstnum ;
+           if(num%2 == 0)
+           {
+               firstnum = num+2;
+           }
+           
+           else
+           {
+               firstnum = num+1;
+           }
+           
+           for(int i=0; i<10; i++)
+           {
+               if(i==0)
+               {
+                   Console.WriteLine(firstnum);
+               }
+               
+               else
+               {
+                   Console.WriteLine(firstnum+(i*2));
+               }
+           }
+        }
+    }
+}
