@@ -1,0 +1,50 @@
+Display Product Details :
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OOPS1 //DO NOT change the namespace name
+{
+    public class Program{
+        public String DisplayProducts(Product productObj)
+        {
+            return "Product id : " + productObj.ProductId + "\n" + productObj.ProductName + " is on sale for " + productObj.ProductCost + "$";
+        }
+        
+        public static void Main(string[] args)  //DO NOT change the method signature
+        {
+            //Implement your code here
+            Program program=new Program();
+            Product product=new Product();
+            
+            Console.WriteLine("Enter the product id:");
+            product.ProductId=Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the product name:");
+            product.ProductName=Console.ReadLine();
+            Console.WriteLine("Enter the product cost:");
+            product.ProductCost=Convert.ToSingle(Console.ReadLine());
+           
+          String result= program.DisplayProducts(product);
+          Console.WriteLine(result);
+        }
+    }
+}
+********************************************************************************
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+namespace OOPS1 //DO NOT change the namespace name
+{
+    public class Product //DO NOT change the class name
+    {
+        //Implement your code here
+        public int ProductId{get;set;}
+        public string ProductName{get;set;}
+        public float ProductCost{get;set;}
+    }
+}

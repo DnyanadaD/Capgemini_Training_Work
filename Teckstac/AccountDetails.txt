@@ -1,0 +1,73 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+//Please check the Problem description and create the class, fields, properties and methods.
+//Implement code here
+public class Account
+{
+    private int id;
+    private String accountType;
+    private double balance;
+    
+    public int Id { get { return id; } set { id = value; } }
+    public String AccountType { get { return accountType; } set { accountType = value; } }
+    public double Balance { get { return balance; } set { balance = value; } }
+    
+
+    public Account() { }
+    public Account(int id, String accountType, double balance)
+    {
+        
+    }
+    
+    public bool WithDraw(double cash)
+    {
+        if (balance>cash)
+        {
+            this.balance=this.balance-cash;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    public String GetDetails()
+    {
+        Console.WriteLine("Enter account id");                                                                
+        Id=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter account type");                             
+        AccountType=Console.ReadLine();
+        Console.WriteLine("Enter account balance");
+        Balance=Convert.ToDouble(Console.ReadLine());
+        if(Balance>0)
+        {
+            this.balance=Balance;
+        }
+        else{
+            this.balance=0;
+        }
+        
+        return "Account Id: "+Id+"\nAccount Type: "+AccountType+"\nBalance: "+Balance;
+    }
+    
+}
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        Account a1 = new Account();
+        Console.WriteLine(a1.GetDetails());
+        Console.Write("Enter amount to withdraw");
+        double amount = Convert.ToDouble(Console.ReadLine());
+        if (a1.WithDraw(amount))
+        {
+            Console.WriteLine("Balance " + a1.Balance);
+        }
+    }
+}

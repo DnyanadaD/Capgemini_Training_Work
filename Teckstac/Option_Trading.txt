@@ -1,0 +1,78 @@
+Option Trading Details :
+ 
+Program.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OptionTradingDetails //DO NOT change the namespace name
+{
+	public class Program //DO NOT change the class name
+	{
+	    public OptionDetails GetDetails(String optionDetails) //DO NOT change the method signature
+        {
+            OptionDetails optiondetailsobj = new OptionDetails();
+            String[] strlist = optionDetails.Split(":", 5,
+               StringSplitOptions.RemoveEmptyEntries);
+            optiondetailsobj.StockExchange=strlist[0];
+            optiondetailsobj.OptionName=strlist[1];
+            optiondetailsobj.ExpiryDate=strlist[2];
+            optiondetailsobj.StrikeRate=Convert.ToInt32(strlist[3]);
+            optiondetailsobj.Option=strlist[4];
+            return optiondetailsobj;
+		}
+		public static void Main(string[] args) //DO NOT change the 'Main' method signature
+		{
+		    Program programobj = new Program();
+            Console.WriteLine("Enter the option order");
+            String optionDetails = Console.ReadLine();
+
+            OptionDetails result = programobj.GetDetails(optionDetails);
+            Console.WriteLine("StockExchange: " + result.StockExchange);
+            Console.WriteLine("OptionName: " + result.OptionName);
+            Console.WriteLine("ExpiryDate: " + result.ExpiryDate);
+            Console.WriteLine("StrikeRate: " + result.StrikeRate);
+            Console.WriteLine("Option: " + result.Option);
+		}
+	}
+}
+OptionDetails.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OptionTradingDetails //DO NOT change the namespace name
+{
+	public class OptionDetails //DO NOT change the class name
+	{
+	     public String StockExchange
+        {
+            get;
+            set;
+        }
+        public String OptionName
+        {
+            get;
+            set;
+        }
+        public String ExpiryDate
+        {
+            get;
+            set;
+        }
+        public int StrikeRate
+        {
+            get;
+            set;
+        }
+        public String Option
+        {
+            get;
+            set;
+        }
+	}
+}
