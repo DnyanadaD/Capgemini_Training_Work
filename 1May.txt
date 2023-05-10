@@ -1,0 +1,70 @@
+// How to remove characters from the first String which are present in the second String?
+
+using System;
+public class GFG
+{
+public static String removeChars(String string1, String string2)
+{
+	for (int index = 0; index < string2.Length; index++)
+	{
+	var i = string2[index];
+
+	while (string1.Contains(i.ToString() + ""))
+	{
+		string1 = string1.Replace((i.ToString() + ""),"");
+	}
+	}
+	return string1;
+}
+public static void Main(String[] args)
+{
+	String string1;
+	String string2;
+	string1 = "geeksforgeeks";
+	string2 = "mask";
+	Console.WriteLine(GFG.removeChars(string1, string2));
+}
+}
+===============================================================================================
+How to print all permutation of a String?
+
+// C# program to implement
+// the above approach
+using System;
+public class GFG{
+
+static void permute(String s,
+					String answer)
+{
+	if (s.Length == 0)
+	{
+		Console.Write(answer + " ");
+		return;
+	}
+	
+	for(int i = 0 ;i < s.Length; i++)
+	{
+		char ch = s[i];
+		String left_substr = s.Substring(0, i);
+		String right_substr = s.Substring(i + 1);
+		String rest = left_substr + right_substr;
+		permute(rest, answer + ch);
+	}
+}
+
+// Driver code
+public static void Main(String []args)
+{	
+	String s;
+	String answer="";
+	
+	Console.Write(
+	"Enter the string : ");
+	s = Console.ReadLine();
+	
+	Console.Write(
+	"\nAll possible strings are : ");
+	permute(s, answer);
+}
+}
+// This code is contributed by gauravrajput1

@@ -1,0 +1,207 @@
+
+using System;
+
+public class HelloWorld
+{
+    public static void Main(string[] args)
+    {
+          Console.WriteLine ("Enter first number");
+          int num1 = Convert.ToInt32(Console.ReadLine ());
+          Console.WriteLine ("Enter second number");
+          int num2 = Convert.ToInt32(Console.ReadLine ());
+          int result=num1+ num2;
+          Console.WriteLine ("Addition : " + result);
+          Console.WriteLine("**********************");
+        
+          Console.WriteLine("Enter the string");
+          string str =Console.ReadLine();
+          string strLower=str.ToLower();
+          Console.WriteLine(strLower);
+          string strUpp=strLower.ToUpper();
+          Console.WriteLine(strUpp);
+          Console.WriteLine("**********************");
+          
+          Console.WriteLine ("Enter a number");
+          int num3 = Convert.ToInt32(Console.ReadLine ());
+          Console.WriteLine ("Multiplication Result");
+          for(int i=1 ; i<=10;i++)
+          {
+            Console.WriteLine(i * num3);  
+          }
+          Console.WriteLine("**********************");
+          
+          Console.Write("Enter year to check whether it is Leap Year or Not :");  
+          int Year = Convert.ToInt32(Console.ReadLine ());
+          if(((Year %4 == 0) && (Year %100 != 0)) ||(Year % 400 == 0))
+          {
+            Console.WriteLine("Leap Year");  
+          }
+          else
+          {
+              Console.WriteLine("Not Leap Year");
+          }
+          
+          Console.WriteLine("**********************");
+          
+          Console.Write("Enter a Number to check whether it is prime or not : ");
+            int number = Convert.ToInt32(Console.ReadLine());
+            bool IsPrime = true;
+
+            for (int i = 2; i < number/2; i++)
+            {
+                if (number % i == 0)
+                {
+                    IsPrime = false;
+                    break;
+                }
+            }
+
+            if (IsPrime)
+            {
+                Console.Write("Number is Prime.");
+            }
+            else
+            {
+                Console.Write("Number is not Prime.");
+            }
+            Console.ReadKey();
+           
+      Console.WriteLine("**********************");
+      Console.WriteLine ("Swapping of Two Number without using   Third Variable");
+      Console.WriteLine("Enter first number");
+      int Number1=Convert.ToInt32(Console.ReadLine());
+      Console.WriteLine("Enter Secong number");
+      int Number2=Convert.ToInt32(Console.ReadLine());
+      Console.WriteLine("Numbers before Swapping are , Number1 is " + Number1 + " and Number2 is " + Number2);
+      Number1=Number1+ Number2;
+      Number2=Number1- Number2;
+      Number1=Number1- Number2;
+      Console.WriteLine("Numbers after Swapping are , Number1 is " + Number1 + " and Number2 is " + Number2);
+
+     Console.WriteLine("**********************");
+       Console.WriteLine(" Hello !");
+       Console.WriteLine("Enter the string : ");
+       string str = Console.ReadLine();
+       Console.WriteLine(str);
+       string name="Dnyanada";
+       Console.WriteLine( str +" "+name);
+       int x ,y ;
+       x = y = 9;
+       Console.WriteLine(x+y);
+Console.WriteLine("**********************");
+/*using System;
+class Program{
+static string OddIndex(string s)
+{
+	string str = "";
+	for(int i = 0; i < s.Length; i++)
+	{
+		if (i % 2 == 1)
+			continue;
+		str += s[i];
+	}
+	return str;
+}
+
+public static void Main()
+{
+	string str = "abcdef";
+	str = OddIndex(str);
+	
+	Console.Write(str);
+}
+}
+
+*/
+Console.WriteLine("**********************************************************************************************************************");
+/* Console.WriteLine ("Enter the starting number : ");
+        int num = Convert.ToInt32(Console.ReadLine());
+        int count=0;
+        while(count <10){
+            if(num%2==0){
+                num= num + 2;
+                Console.Write(num +" ");
+                count++;
+            }
+            else{
+                num= num + 1;
+                Console.Write(num +" ");
+                count++;
+            }
+        }*/
+Console.WriteLine("****************************************************");
+Console.WriteLine ("Enter the grade : ");
+        Char grade =Convert.ToChar(Console.ReadLine());
+        
+        switch(grade)
+        {
+            case 'A':
+                     Console.WriteLine("90-100");
+                     break;
+            case 'B':
+                     Console.WriteLine("80-90");
+                     break;
+            case 'C':
+                     Console.WriteLine("70-80");
+                     break;
+            case 'D':
+                     Console.WriteLine("60-70");
+                     break;
+            case 'E':
+                     Console.WriteLine("50-60");
+                     break;
+            case 'F':
+                     Console.WriteLine("<50");
+                     break;
+             default:
+                     Console.WriteLine("Invalid Case");
+                     break;
+            
+        }
+        
+
+
+Console.WriteLine("**********************************************************************************************************************");
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+ 
+namespace store_value_in_array
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            Console.Write("\nEnter array length:\t");
+            int i = Convert.ToInt32(Console.ReadLine());
+            string[] arr = new string[i]; 
+            // Accepting value from user 
+            for (i = 0; i < arr.Length; i++)
+            {
+                Console.Write("\nEnter your string:\t");
+                //Storing value in an array
+                arr[i] = Console.ReadLine();
+                
+            }
+            Console.WriteLine("\n\n");
+            //Printing the value on console
+            for (i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine("you entered {0}", arr[i]);
+            }
+            Console.ReadLine();
+        }
+    }
+}
+
+
+    }
+}
+
+ 
+
+
+

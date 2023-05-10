@@ -1,0 +1,205 @@
+1. Check Two String which are reverse of each other or not.
+
+=============================================================================================================
+2. Find the Smallest Sum of consecutive Number from given Array.
+
+using System;
+
+class GFG {
+
+	static int smallestSumSubarr(int[] arr, int n)
+	{
+		int min_ending_here = 2147483647;
+		int min_so_far = 2147483647;
+
+		for (int i = 0; i < n; i++) {
+			if (min_ending_here > 0)
+			min_ending_here = arr[i];
+			else
+				min_ending_here += arr[i];
+
+			min_so_far = Math.Min(min_so_far,min_ending_here);
+		}
+		return min_so_far;
+	}
+	public static void Main()
+	{
+
+		int[] arr = { 3, -4, 2, -3, -1, 7, -5 };
+		int n = arr.Length;
+
+		Console.Write("Smallest sum: " + smallestSumSubarr(arr, n));
+	}
+}
+=============================================================================================================
+
+3. Find the Power without using math.pow function.
+
+class Program
+    {
+        static void Main(string[] args)
+        {
+            int baseNumber, expNumber, result = 1;
+            Console.Write("Base Number : ");
+            baseNumber = Convert.ToInt32(Console.ReadLine());
+            Console.Write("exponent Number : ");
+            expNumber = Convert.ToInt32(Console.ReadLine());
+ 
+ 
+            while (expNumber != 0)
+            {
+                result *= baseNumber;
+                --expNumber;
+            }
+ 
+            Console.WriteLine("Result = {0}", result);
+            Console.ReadLine();
+        }
+    }
+=============================================================================================================
+
+4. Find the negative Power without using math.pow function.
+=============================================================================================================
+
+5. Find the unique Character in the String is repeated in a string 
+
+using System;
+public class GFG {
+
+	static bool uniqueCharacters(String str)
+	{
+		for (int i = 0; i < str.Length; i++)
+			for (int j = i + 1; j < str.Length; j++)
+				if (str[i] == str[j])
+					return false;
+
+		return true;
+	}
+
+	public static void Main()
+	{
+		string input = "GeeksforGeeks";
+
+		if (uniqueCharacters(input) == true)
+			Console.WriteLine("The String " + input
+							+ " has all unique characters");
+		else
+			Console.WriteLine("The String " + input
+							+ " has duplicate characters");
+	}
+}
+
+
+=============================================================================================================
+
+6. Count the no of vowels and constants in a string 
+
+
+using System;
+class GFG{
+	
+public static void Main()
+{
+	string inputstring;
+	int i, len, vowels, consonants;
+	
+	inputstring = "geeksforgeeks";	
+	vowels = 0;
+	consonants = 0;
+	len = inputstring.Length;
+	for(i = 0; i < len; i++)
+	{
+		
+		if (inputstring[i] == 'a' || inputstring[i] == 'e' ||
+			inputstring[i] == 'i' || inputstring[i] == 'o' ||
+			inputstring[i] == 'u' || inputstring[i] == 'A' ||
+			inputstring[i] == 'E' || inputstring[i] == 'I' ||
+			inputstring[i] == 'O' || inputstring[i] == 'U')
+		{
+			
+			vowels++;
+		}
+		
+		else if ((inputstring[i] >= 'a' && inputstring[i] <= 'z') ||
+				(inputstring[i] >= 'A' && inputstring[i] <= 'Z'))
+		{
+			consonants++;
+		}
+	}
+	
+	Console.WriteLine("count of vowel = " + vowels);
+	Console.WriteLine("count of consonant = " + consonants);
+}
+}
+
+=============================================================================================================
+7. Convert a String into integer? 
+
+using System;
+namespace GeeksforGeeks {
+class GFG{
+	public static void Main(string[] args)
+	{
+		string l = "10";
+		int length = Int32.Parse(l);
+		int aofs = length * length;
+            Console.WriteLine("Area of a circle is: {0}", aofs);
+	}
+}
+}
+
+=============================================================================================================
+8. Write a program to find the difference between equals and ==
+
+using System;  
+  
+namespace ComparisionExample  
+{  
+   class Program  
+    {   
+      static void Main(string[] args)   
+       {   
+          string name = "sandeep";   
+          string myName = name;   
+          Console.WriteLine("== operator result is {0}", name == myName);  
+          Console.WriteLine("Equals method result is {0}", name.Equals(myName));  
+          Console.ReadKey(); 
+          object name = "sandeep";  
+          char[] values = {'s','a','n','d','e','e','p'};  
+          object myName = new string(values);           
+          Console.WriteLine("== operator result is {0}", name == myName);  
+          Console.WriteLine("Equals method result is {0}", myName.Equals(name));  
+          Console.ReadKey();  
+        }    
+  
+    }  
+}
+=============================================================================================================
+9.Reverse the String with and without recursion
+
+using System;
+class RecExercise14
+    {
+        static void Main()
+        {
+            string str; 
+			Console.WriteLine("\n\n Recursion : Get the reverse of a string :");
+			Console.WriteLine("----------------------------------------------"); 
+			Console.Write(" Input the string : ");
+            str = Console.ReadLine();
+            str = StringReverse(str);
+            Console.Write(" The reverse of the string is : ");
+            Console.Write(str);
+            Console.ReadKey();
+             Console.Write("\n"); 
+            
+        }
+
+        public static string StringReverse(string str)
+        {
+            if (str.Length > 0)
+                return str[str.Length - 1] + StringReverse(str.Substring(0, str.Length - 1));
+            else
+                return str;
+        }
+    }

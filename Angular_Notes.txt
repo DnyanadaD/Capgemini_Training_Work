@@ -1,0 +1,93 @@
+Angular => Angular is a TypeScript-based front-end web application framework. It targets both the browser and the server.
+
+SPA :-Single page application
+      Applications where the main UI gets loaded once and then the needed UI is loaded on demand
+      SPA is possible with the help of routing.
+
+Routing:- Navigation
+          Has URL
+          URL will load the component.
+
+Pillars of Angular:-
+1.Templates            -HTML view of angular
+                        Inline Template
+                        Linked Template
+
+2.Compnents            -Binds the view and Model .Basic building block.
+
+3.Modules              -Groups components logically
+                        A module is a place where we can group components, directives, services, and pipes. Module decides whether the components, 
+                        directives, etc can be used by other modules, by exporting or hiding these elements. Every module is defined with a @NgModule 
+                        decorator.
+By default, modules are of two types:
+   #Root Module
+   #Feature Module
+Every application can have only one root module whereas, it can have one or more feature modules.
+A root module imports BrowserModule, whereas a feature module imports CommonModule.
+
+4.Data Binding(SAC)    -Communication of view and component
+
+5.Directives           -Changes the HTML behaviour
+                         A directive is a class in Angular that is declared with a @Directive decorator.
+                         Every directive has its own behaviour and can be imported into various components of an application.
+ *Component directives=
+These form the main class in directives. Instead of @Directive decorator we use @Component decorator to declare these directives. These directives have a view, a stylesheet and a selector property.
+ 
+ *Structural directives=
+These directives are generally used to manipulate DOM elements.
+Every structural directive has a ‘ * ’ sign before them.
+We can apply these directives to any DOM element.(ngFor and ngIf)
+
+ *Attribute Directives=
+These directives are used to change the look and behaviour of a DOM element.
+
+6.services             -Helps to share common logic across the project
+Services are objects which get instantiated only once during the lifetime of an application. The main objective of a service is to share data, functions with different components of an Angular application.
+A service is defined using a @Injectable decorator. A function defined inside a service can be invoked from any component or directive.
+
+7.Dependency Injection -Helps to inject instance across constructor
+                        (rather than creating object instance from within the component,Angular injects it via the constructor)
+                        {Providers}
+                        Helps to decouple class dependencies, when new dependencies added we dont need to change everywhere
+                        
+
+Lazy loadinhg:-  Means on demand loading. Loading only the necessary HTML ,CSS,Javascript files so that have better performance
+                 dividing the project in two parts
+                 Using loadChildren
+
+ng serve = builds in memory
+ng build = builds in hard disk(production = Ng build --prod)
+
+
+LifeCycle Hooks
+1. ngOnChanges           =input or output value changes
+2. ngOnInit              =after the first ngOnchanges
+3. ngDoCheck             =developers custom change detection
+4. ngAfterContentInit    =After component content initialized.
+5. ngAfterContentChecked =After every check of component content.
+6. ngAfterViewInit       =After the views of a component are initialized.
+7. ngAfterViewChecked    =After every check of the views of a component.
+8. ngOnDestroy           =Just before the directive is destroyed.
+
+================================================================================
+Work of Angular application =>
+angular.json - This file will contain all the configurations of the app
+               
+While building the app, the builder looks at this file to find 
+the entry point of the application.
+
+Inside the build section, the main property of the options object defines the entry point of the application which in this case is main.ts.
+
+The main.ts file creates a browser environment for the application to run, and, along with this, it also calls a function called bootstrapModule, which bootstraps the application. 
+
+Appmodule is declared in the app.module.ts file. This module contains declarations of all the components.
+
+app.component.ts = This file interacts with the webpage and serves data to it.
+
+Each component is declared with three properties:
+
+Selector - used for accessing the component
+Template/TemplateURL - contains HTML of the component
+StylesURL - contains component-specific stylesheets
+
+After this, Angular calls the index.html file. This file consequently calls the root component that is app-root. The root component is defined in app.component.ts.

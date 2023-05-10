@@ -1,0 +1,24 @@
+Okta provides authentication solutions 
+
+SSO= Single Sign On
+Technology that enables users to authenticate to more than one application by using a single credential
+
+SAML = Security Assertion Markup Language (Okta Supported SSO Protocol)
+is an open standard for exchanging authentication and authorization data between parties. Most commonly these parties are an Identity Provider and a Service Provider. The primary use case for SAML has typically been to provide single sign-on (SSO) for users to applications within an enterprise/workforce environment.
+(XML) assertion user data
+
+Open ID Connect = (Okta Supported SSO Protocol)
+Built on OAuth 2.0 authorization protocol
+JSON Web Token(JWT) claims user data
+
+Authentication and authorization are two vital information security processes that administrators use to protect systems and information. Authentication verifies the identity of a user or service, and authorization determines their access rights.
+Authentication (AuthN) is a process that verifies that someone or something is who they say they are.
+we use authorization to give users or services permission to access some data or perform a particular action.
+
+
+
+
+
+
+
+

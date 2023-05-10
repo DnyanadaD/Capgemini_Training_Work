@@ -1,0 +1,49 @@
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+class Product{
+	
+
+int id;
+
+string name;
+
+
+public override string ToString()
+{
+	return id + " " + name ;
+}
+
+
+static void Main(string[] args)
+{
+	
+	
+	List<Product> Prod = new List<Product>()
+	{
+		
+		
+		new Employee{ id = 101, name = "Soap"},
+                new Employee{ id = 102, name = "Hair Oil"},
+                new Employee{ id = 103, name = "Tooth Brush"}
+		
+	};
+	
+	
+	IEnumerable<Product> result = Prod.Where(x => x.name[0] == 'S');
+	
+	
+	Console.WriteLine("ID   Name ");
+	Console.WriteLine("++++++++++++++++++++++++++++");
+	foreach (Product p in result)
+	{
+		
+		// Call the to string method
+		Console.WriteLine(p.ToString());
+	}	
+}
+}

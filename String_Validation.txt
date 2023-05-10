@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Text.RegularExpressions;
+ 
+namespace store_value_in_array
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+ 
+            int Sum=0;
+            int Count=0;
+            
+            Console.Write("\nEnter array length:\t");
+            int i = Convert.ToInt32(Console.ReadLine()); //Taking int input for size
+            
+            string[] arr = new string[i]; //Declaring array
+            
+            for (i = 0; i < arr.Length; i++)
+            {
+                Console.Write("\nEnter your string:\t");
+                arr[i] = Console.ReadLine();// Accepting and Storing value from user 
+            }
+            
+            Console.WriteLine("\n\n");
+            
+            for(i=0;i<arr.Length;i++)
+            {
+                if(!String.IsNullOrWhiteSpace(arr[i]))
+                {
+                    arr[i]=Regex.Replace( arr[i], @" ", "" );//Removing Space
+
+                }
+
+            }
+            
+            for( i=0;i<arr.Length;i++)
+            { 
+                bool test=true;
+                for(int j=0;j<arr[i].Length;j++) //initialising another array
+               {
+                  test= Char.IsLetter(arr[i], j); //Checking for special characters
+                  if(test==false)
+                  break;
+               }
+               if(test)
+               {
+                  // Console.WriteLine(arr[i]+" => Verified");
+                   Sum++;  //Increasing the count if string is verified
+                   
+               }
+               else
+               {
+                 //  Console.WriteLine(arr[i]+" => Invalid details");
+                   Count++; //Increasing the count if string is invalid
+               }
+            }
+             Console.WriteLine("Verified : " + Sum);
+             Console.WriteLine("Invalid : " + Count);
+                   
+            Console.ReadLine();
+        }
+    }
+}
+

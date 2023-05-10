@@ -1,0 +1,147 @@
+using System;
+using System.Collections.Generic;
+
+class Program 
+{
+ SortedDictionary<string,long>stock_sdict=new SortedDictionary<string , long>();
+
+ public SortedDictionary<string,long>SearchStock(String stockName)
+ {
+    SortedDictionary<string,long > sdict= new SortedDictionary<string , long>();
+    foreach(var stock in stock_sdict)
+    {
+     if(stock.key == stockName)
+     {
+       sdict.Add(stock.Key, stock.Value);
+       return sdict;
+     }
+    }
+    return new SortedDictionary<String,long>();       
+ }
+
+
+ public SortedDictionary<string,long>UpdateStockPrice(String stockName ,long price)
+ {
+ SortedDictionary<string,long > sdict= new SortedDictionary<string , long>();
+ foreach(var stock in stock_sdict)
+    {
+      if(stock.key == stockName)
+     {
+       sdict.Add(stock.Key, price);
+       return sdict;
+     }
+
+    }
+    return new SortedDictionary<String,long>();
+ }
+
+
+ public SortedDictionary<string,long>SortByStockName()
+ {
+   return stock_sdict;
+ }
+
+
+ public SortedDictionary<string,long>SortByStockPrice()
+ {
+   SortedDictionary<string,long > sdict= new SortedDictionary<string , long>();
+   var sortedDictByPrice = from stock in stock_sdict orderby stock.Value ascending select stock;
+   foreach(var stock in stock_sdict)
+    {
+       sdict.Add(stock.Key, price);
+    }
+    return sdict;
+ }
+	
+static public void Main()
+{
+  Program program= new Program();    
+  program.stock_sdict.Add("ICICI",2300);
+  program.stock_sdict.Add("Honda",9500);		
+  program.stock_sdict.Add("SBI",1000);
+  program.stock_sdict.Add("Axis Bank",800);
+  program.stock_sdict.Add("TATA",250);		
+
+ int num;
+ while(true)
+{
+Console.WriteLine("\n Enter your choice:
+                    \n1.Search by stock name
+                     \n2.Update price
+                      \n3.Sort by name
+                       \n4.Sort by price
+                        \5.Exit");
+num=Int32.Parse(Console.ReadLine());
+switch(num){
+  case1:
+        SortedDictionary<string,long>sdict=new SortedDictionary<string , long>();
+        Concole.WriteLine("Enter Stock Name");
+        string stockName=Console.ReadLine();
+
+       sdict =program.SearchStock(stockName);
+       if(sdict.Count !=0)
+          foreach (var stock in sdict)
+          {
+            Concole.WriteLine(stock.Key);
+            Concole.WriteLine(stock.Key + " " + stock.Value);
+          }
+         else
+          {
+          Concole.WriteLine("Stock Not Found ");
+          }
+         break;
+  
+   case2:
+       Concole.WriteLine("Enter Stock Name");
+        string stockName=Console.ReadLine();
+        Concole.WriteLine("Enter Stock Price");
+        int stockPrice=int.Parse(Console.ReadLine());
+       
+     sdict =program.UpdateStockPrice(stockName , stockPrice);
+       if(sdict.Count !=0)
+          foreach (var stock in sdict)
+          {
+            Concole.WriteLine(stock.Key);
+            Concole.WriteLine(stock.Key + " " + stock.Value);
+          }
+         else
+          {
+          Concole.WriteLine("Stock Not Found ");
+          }
+         break;
+  
+    case3:
+       sdict =program.SortByStockName();
+       if(sdict.Count !=0)
+          foreach (var stock in sdict)
+          {
+            Concole.WriteLine(stock.Key);
+            Concole.WriteLine(stock.Key + " " + stock.Value);
+          }
+         else
+          {
+          Concole.WriteLine("Stock Not Found ");
+          }
+         break;
+
+  case4: 
+  sdict =program.SortByStockPrice();
+  if (sdict.Count !=0)
+  foreach (var stock in sdict)
+  {
+    Concole.WriteLine(stock.Key + " " + stock.Value);
+  }
+  else
+  {
+    Concole.WriteLine("Stock Not Found ");
+  }
+  break;
+
+  case5:  
+        return;
+
+
+}
+}
+}
+}  

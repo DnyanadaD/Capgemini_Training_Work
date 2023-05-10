@@ -1,0 +1,37 @@
+//Swapping without 3rd variable
+
+using System;  
+  public class SwapExample  
+   {  
+     public static void Main(string[] args)  
+      {  
+       int  a=5, b=10;            
+       Console.WriteLine("Before swap a= "+a+" b= "+b);    
+       a=a+b; //a=15 (5+10)      
+       b=a-b; //b=5 (15-10)      
+       a=a-b; //a=10 (15-5)   
+       Console.Write("After swap a= "+a+" b= "+b);       
+      }  
+  }  
+
+================================================================================================================================================
+//Write a C# program to create a new string from a given string where the first and last characters will change their positions
+
+using System;
+using System.Collections.Generic;
+
+public class Exercise16 {
+  static void Main(string[] args)
+        {
+            Console.WriteLine(first_last("w3resource"));
+            Console.WriteLine(first_last("Python"));
+            Console.WriteLine(first_last("x"));
+        }
+       public static string first_last(string ustr)
+        {
+            return ustr.Length > 1
+                ? ustr.Substring(ustr.Length - 1) + ustr.Substring(1, ustr.Length - 2) + ustr.Substring(0, 1) : ustr;
+        }
+}
+
+================================================================================================================================================
